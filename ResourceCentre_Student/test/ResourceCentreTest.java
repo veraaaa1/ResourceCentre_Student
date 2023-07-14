@@ -47,11 +47,7 @@ public class ResourceCentreTest {
 		ResourceCentre.addCamcorder(camcorderList, cc1);		
 		assertEquals("Test that the Camcorder arraylist size is 1.", 1, camcorderList.size());
 
-<<<<<<< HEAD
-		
-=======
 
->>>>>>> branch 'master' of https://github.com/veraaaa1/ResourceCentre_Student.git
 		// Add an item
 		ResourceCentre.addCamcorder(camcorderList, cc2);
 		assertEquals("Test that the Camcorder arraylist size is now 2.", 2, camcorderList.size());
@@ -70,10 +66,6 @@ public class ResourceCentreTest {
 
 	@Test
 	public void testAddChromebook() {
-<<<<<<< HEAD
-		//fail("Not yet implemented");
-		// write your code here 
-=======
 
 		// write your code here 
 		// Item list is not null and it is empty
@@ -98,7 +90,6 @@ public class ResourceCentreTest {
 		Chromebook cb_missing = new Chromebook("CB0012", "", "60");
 		ResourceCentre.addChromebook(chromebookList, cb_missing);
 		assertEquals("Test that the Chromebook arraylist size is unchange.", 2, chromebookList.size());
->>>>>>> branch 'master' of https://github.com/veraaaa1/ResourceCentre_Student.git
 	}
 
 
@@ -142,22 +133,6 @@ public class ResourceCentreTest {
 
 	@Test
 	public void testRetrieveAllChromebook() {
-<<<<<<< HEAD
-		//fail("Not yet implemented");
-		// write your code here
-		// Test Case 1 - Loan an available Item...  assertNotNull("Test if there is valid Chromebook arraylist to loan from", chromebookList);
-		  ResourceCentre.addChromebook(chromebookList, cb1);  Boolean ok = ResourceCentre.doLoanChromebook(chromebookList, "CB0011", "8-8-2020");
-		  assertTrue("Test if an available item is ok to loan?", ok);  assertFalse(chromebookList.get(0).getIsAvailable());
-		  assertEquals(chromebookList.get(0).getDueDate(), "8-8-2020");
-		  // Test Case 2 - Loan an unavailable item  cb2.setIsAvailable(false);
-		  ResourceCentre.addChromebook(chromebookList, cb2);  assertFalse("Test that there is an item not available", chromebookList.get(1).getIsAvailable());
-		  ok = ResourceCentre.doLoanChromebook(chromebookList, "CB0012", "8-8-2020");  assertFalse("Test that the loan fails.", ok);
-		  // Test Case 3 - Item not found
-		  ok = ResourceCentre.doLoanChromebook(chromebookList, "CB0016", "8-8-2020");  assertFalse("Test that the loan fails.", ok);
-		  // Test case 4 - Missing details
-		  ResourceCentre.addChromebook(chromebookList, cb3);  assertTrue("Test that there is an item available", chromebookList.get(2).getIsAvailable());
-		  ok = ResourceCentre.doLoanChromebook(chromebookList, "CB0013", "");  assertFalse("Test that the loan fails.", ok);
-=======
 
 		// write your code here
 		// Test if Item list is not null and empty
@@ -192,7 +167,6 @@ public class ResourceCentreTest {
 		testOutput += String.format("%-10s %-30s %-10s %-10s %-20s\n", "CB0012", "SAMSUNG Chromebook 4+","Yes", "", "Win 10");
 		// Test that the details are displayed correctly
 		assertEquals("Test that the display is correct.", testOutput, allChromebook);
->>>>>>> branch 'master' of https://github.com/veraaaa1/ResourceCentre_Student.git
 	}
 
 
@@ -229,11 +203,6 @@ public class ResourceCentreTest {
 
 	@Test
 	public void testDoLoanChromebook() {
-<<<<<<< HEAD
-		//fail("Not yet implemented");
-		// write your code here
-		
-=======
 
 		// write your code here
 		// Test Case 1 - Loan an available Item
@@ -261,12 +230,11 @@ public class ResourceCentreTest {
 		ok = ResourceCentre.doLoanChromebook(chromebookList, "CB0013", "" );
 		assertFalse("Test that the loan fails.", ok);
 
->>>>>>> branch 'master' of https://github.com/veraaaa1/ResourceCentre_Student.git
 	}
 
 	@Test
 	public void testDoReturnCamcorder() {
-		
+
 		// Test case 1: Return a loaned out item
 		assertNotNull("Test if there is valid Camcorder arraylist to add to", camcorderList);
 		ResourceCentre.addCamcorder(camcorderList, cc1);
@@ -279,43 +247,17 @@ public class ResourceCentreTest {
 		// Test case 2: Return an item that is not loaned out
 		isReturned = ResourceCentre.doReturnCamcorder(camcorderList, "CC0011");
 		assertFalse("Test that the return fails.", isReturned);
-<<<<<<< HEAD
-				
-=======
 
->>>>>>> branch 'master' of https://github.com/veraaaa1/ResourceCentre_Student.git
 		// Test case 3: Return an item that does not exist 
 		isReturned = ResourceCentre.doReturnCamcorder(camcorderList, "CC0013");
 		assertFalse("Test the the return of CC0013 fails.", isReturned);	
 	}
-	
+
 	@Test
 	public void testDoReturnChromebook() {
-<<<<<<< HEAD
-		//fail("Not yet implemented");
-=======
 
->>>>>>> branch 'master' of https://github.com/veraaaa1/ResourceCentre_Student.git
 		// write your code here
 		// Test case 1: Return a loaned out item
-<<<<<<< HEAD
-		assertNotNull("Test if there is valid Chromebook arraylist to add to",chromebookList);
-		ResourceCentre.addChromebook(chromebookList, cb1);
-		Boolean ok = ResourceCentre.doLoanChromebook(chromebookList,"CB001","8-8-2020");
-		assertTrue("Test if CB001 is successfully loaned out.", ok);
-		Boolean isReturned = ResourceCentre.doReturnChromebook(chromebookList, "CB001");
-		assertTrue("Test if the return of CB001 is successful.", isReturned);
-		assertTrue("Test that CB001 is now available.",chromebookList.get(0).getIsAvailable());
-		
-	    // Test case 2: Return an item that is not loaned out
-	    isReturned = ResourceCentre.doReturnChromebook(chromebookList, "CB002");
-	    assertFalse("Test that the return fails.", isReturned);
-	    
-	    // Test case 3: Return an item that does not exist 
-	    isReturned = ResourceCentre.doReturnChromebook(chromebookList, "CB103");
-	    assertFalse("Test the the return of CB123 fails.", isReturned);
-		
-=======
 		assertNotNull("Test if there is valid Chromebook arraylist to add to", chromebookList);
 		ResourceCentre.addChromebook(chromebookList, cb1);
 		Boolean ok = ResourceCentre.doLoanChromebook(chromebookList, "CB0011", "8-8-2020" );
@@ -331,7 +273,6 @@ public class ResourceCentreTest {
 		// Test case 3: Return an item that does not exist 
 		isReturned = ResourceCentre.doReturnChromebook(chromebookList, "CB0013");
 		assertFalse("Test the the return of CB0013 fails.", isReturned);	
->>>>>>> branch 'master' of https://github.com/veraaaa1/ResourceCentre_Student.git
 	}
 
 
